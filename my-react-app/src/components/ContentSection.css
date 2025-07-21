@@ -1,0 +1,248 @@
+
+/* Base styles for text-line */
+.text-line {
+    padding-top: 50px;
+    font-size: 42px; /* or whatever default size you want */
+    color: rgba(4, 54, 130, 1);
+    font-weight: bolder;
+    text-align: center; /* Center the text */
+    padding-bottom: 100px;
+}
+
+/* Responsive styles for smaller screens */
+@media (max-width: 480px) {
+    .text-line {
+        font-size: 16px;
+        color: rgba(4, 54, 130, 1);
+        text-align: center; /* Center the text */
+    }
+}
+
+/* Other styles remain unchanged */
+.card-grid {
+    
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    gap: 6rem;
+    padding: 2rem;
+    max-width: 900px;
+    margin: 0 auto; /* This centers the grid horizontally */
+    justify-content: center; /* Center the grid items horizontally */
+    align-items: center; /* Center the grid items vertically */
+}
+
+/* Centering the cards */
+.card {
+    position: relative;
+    padding: 2rem;
+    border: 8px solid;
+    border-radius: 0px;
+    background-color: white;
+    width: 400px;  /* Increased size */
+    height: 220px; /* Increased size */
+    text-align: left;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Other card styles remain unchanged */
+.card h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+    font-weight: bold;
+}
+
+.card p {
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+/* Green Card */
+.green-card {
+    border-color: rgba(142, 241, 187, 1);
+}
+.green-card h2 {
+    color: rgba(142, 241, 187, 1);
+}
+
+/* Other card styles remain unchanged */
+.green-card .green-circle {
+    position: absolute;
+    top: -2.5rem;
+    left: -2.5rem;
+    width: 5rem;
+    height: 5rem;
+    background-color: rgba(142, 241, 187, 1);
+    border-radius: 50%;
+    z-index: -1;
+}
+
+/* Yellow Card */
+.yellow-card {
+    border-color: rgba(246, 207, 133, 1);
+}
+.yellow-card h2 {
+    color: rgba(246, 207, 133, 1);
+}
+
+/* Other card styles remain unchanged */
+.yellow-card .yellow-rectangle {
+    position: absolute;
+    bottom: -1.5rem;
+    right: -1.5rem;
+    width: 8rem;
+    height: 3rem;
+    background-color: rgba(246, 207, 133, 1);
+    z-index: -1;
+}
+
+/* Blue Card */
+.blue-card {
+    border-color: #93c5fd;
+}
+.blue-card h2 {
+    color: #93c5fd;
+}
+
+/* Other card styles remain unchanged */
+.blue-card .blue-square {
+    position: absolute;
+    bottom: -1.5rem;
+    left: -1.5rem;
+    width: 5rem;
+    height: 5rem;
+    background-color: #93c5fd;
+    z-index: -1;
+}
+
+/* Purple Card */
+.purple-card {
+    border-color: rgba(162, 109, 212, 1);
+}
+.purple-card h2 {
+    color: rgba(162, 109, 212, 1);
+}
+
+/* Other card styles remain unchanged */
+.purple-card .purple-triangle {
+    position: absolute;
+    bottom: -2.5rem;
+    right: -2rem;
+    width: 0;
+    height: 0;
+    border-left: 4rem solid transparent;
+    border-right: 4rem solid transparent;
+    border-top: 5rem solid rgba(162, 109, 212, 1);
+    z-index: -1;
+}
+
+/* Responsive for mobile */
+@media (max-width: 900px) {
+    .container {
+        grid-template-columns: 1fr;
+        justify-items: center;
+    }
+
+    .card {
+        width: 70%;
+        height: auto;
+    }
+}
+.highlight-section {
+    padding: 40px 20px;
+    text-align: center;
+    background-color: #0c0c53;
+    max-width: 100vw;
+    box-sizing: border-box;
+    width: 100%;
+  }
+  
+  .highlight-section h1 {
+    font-size: 2.5rem;
+    margin: 0 auto 20px;
+    color: #ffffff;
+    text-align: center;
+    max-width: 90%;
+  }
+  
+  .highlight {
+    background: #00c6d3;
+    padding: 0 5px;
+    color: white;
+    border-radius: 5px;
+  }
+  
+  .description {
+    max-width: 800px;
+    margin: 0 auto 40px;
+    font-size: 1.1rem;
+    color: #ffffff;
+    text-align: center;
+    padding: 0 20px;
+  }
+  
+.highlight-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    max-width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
+  }
+  
+  .image-box {
+    max-width: 600px;
+    flex-shrink: 0;
+  }
+  
+  .image-box img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+  }
+  
+  .cards-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 600px;
+  }
+  
+  .card {
+    background: white;
+    color: black;
+    border-radius: 10px;
+    padding: 20px;
+    width: 100%;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  }
+  
+  .card h3 {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+  }
+  
+  .card.nlp {
+    border: 10px solid #fbbd9a;
+  }
+  
+  .card.ml {
+    border: 10px solid #c2d9ff;
+  }
+  
+  @media (max-width: 768px) {
+   
+    .highlight-section h1 {
+      font-size: 2rem;
+    }
+  
+    .highlight-content {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .card {
+      width: 90%;
+    }
+  }
