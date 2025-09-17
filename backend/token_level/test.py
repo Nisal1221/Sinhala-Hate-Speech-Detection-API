@@ -8,7 +8,7 @@ tokenizer = AutoTokenizer.from_pretrained(model_path)
 model = AutoModelForTokenClassification.from_pretrained(model_path)
 labels = joblib.load(f"{model_path}/label_encoder.pkl")  # ["O", "Hate"]
 
-# ✅Set device
+# Set device
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 model.to(device)
 model.eval()
