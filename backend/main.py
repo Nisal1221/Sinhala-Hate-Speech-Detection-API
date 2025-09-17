@@ -1,7 +1,6 @@
 from fastapi import FastAPI, UploadFile, File
 from fastapi.middleware.cors import CORSMiddleware
 from ocr_utils import extract_text
-# from sentence_level.predict_sentence import predict_sentence_level
 from token_level.predict_token import predict_token_level
 from db import detections_collection
 from datetime import datetime
@@ -9,18 +8,17 @@ from token_level.predict_token import predict_token_level, clean_ocr_text
 
 app = FastAPI()
 
-# 👇 Include both ports 3000 and 3001 for safety
 
 # Allow cross-origin requests
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000"],  # ✅ allow both ports if needed
+    allow_origins=["http://localhost:3000"],  
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
-# 👇 Helper function to group hate tokens into hate words
+#  Helper function to group hate tokens into hate words
 def group_hate_tokens(token_predictions):
     hate_words = []
     current_word = ""
@@ -48,7 +46,7 @@ def group_hate_tokens(token_predictions):
     return hate_words
 
 
-# 📌 token-level API
+#  token-level API
 @app.post("/token-level/upload-image")
 async def upload_image_token(file: UploadFile = File(...)):
     contents = await file.read()
@@ -83,4 +81,5 @@ async def upload_image_token(file: UploadFile = File(...)):
         "extracted_text": extracted_text,
         "hate_words_detected": hate_words_detected,
         "token_predictions": token_predictions
+
     }
